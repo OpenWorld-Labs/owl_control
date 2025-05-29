@@ -4,3 +4,9 @@ pywin32>=306; sys_platform == 'win32'
 numpy>=2.0.0
 opencv-python>=4.10.0
 pyinstaller>=6.0.0
+pandas>=2.2.3
+psutil>=7.0.0
+requests>=2.32.3
+obsws_python>=1.7.2
+httpx>=0.28.1
+tqdm>=4.67.1
