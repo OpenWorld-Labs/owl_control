@@ -47,8 +47,8 @@ jobs:
 
       - name: Install gstreamer
         run: |
-          Start-Process msiexec -Wait -ArgumentList '/passive INSTALLDIR="$pwd\gstreamer" /i build-resources\downloads\gstreamer-1.0-msvc-x86_64.msi'
-          Start-Process msiexec -Wait -ArgumentList '/passive INSTALLDIR="$pwd\gstreamer" /i build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi'
+          Start-Process msiexec -Wait -ArgumentList '/qn TARGETDIR="$pwd\gstreamer" /a build-resources\downloads\gstreamer-1.0-msvc-x86_64.msi'
+          Start-Process msiexec -Wait -ArgumentList '/qn TARGETDIR="$pwd\gstreamer" /a build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi'
 
       - name: Build recorder
         run: |
