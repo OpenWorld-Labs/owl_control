@@ -42,6 +42,14 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Download requirements
+        run: package:download-requirements
+
+      - name: Install gstreamer
+        run: |
+          msiexec /passive /i build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi
+          msiexec /passive /i build-resources\downloads\gstreamer-1.0-msvc-x86_64.msi
+
       - name: Build recorder
         run: cargo build --bin owl-recorder --release
         
