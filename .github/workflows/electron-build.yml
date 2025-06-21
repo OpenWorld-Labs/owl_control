@@ -52,7 +52,7 @@ jobs:
 
       - name: Build recorder
         run: |
-          $env:PATH += $env:GSTREAMER_1_0_ROOT_MSVC_X86_64 + "\bin;"
+          $env:PATH += "C:\Program Files\gstreamer\1.0\msvc_x86_64\bin;"
           cargo build --bin owl-recorder --release
         
       - name: Build Webpack
