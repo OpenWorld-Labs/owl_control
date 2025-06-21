@@ -43,7 +43,7 @@ jobs:
         run: npm ci
 
       - name: Download requirements
-        run: package:download-requirements
+        run: npm run package:download-requirements
 
       - name: Install gstreamer
         run: |
