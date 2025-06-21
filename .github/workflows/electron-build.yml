@@ -47,12 +47,12 @@ jobs:
 
       - name: Install gstreamer
         run: |
-          Start-Process msiexec -Wait -ArgumentList '/qn TARGETDIR="$pwd\gstreamer" /a build-resources\downloads\gstreamer-1.0-msvc-x86_64.msi'
-          Start-Process msiexec -Wait -ArgumentList '/qn TARGETDIR="$pwd\gstreamer" /a build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi'
+          Start-Process msiexec -Wait -ArgumentList '/qn /a build-resources\downloads\gstreamer-1.0-msvc-x86_64.msi'
+          Start-Process msiexec -Wait -ArgumentList '/qn /a build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi'
 
       - name: Build recorder
         run: |
-          $env:PATH += "$pwd\gstreamer\1.0\msvc_x86_64\bin;"
+          $env:PATH += "C:\Program Files\gstreamer\1.0\msvc_x86_64\bin;"
           cargo build --bin owl-recorder --release
         
       - name: Build Webpack
