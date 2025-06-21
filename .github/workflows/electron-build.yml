@@ -51,10 +51,11 @@ jobs:
           Get-Content -Path install.log
           Start-Process msiexec -Wait -ArgumentList '/qn /a build-resources\downloads\gstreamer-1.0-devel-msvc-x86_64.msi /Liwemo install.log'
           Get-Content -Path install.log
+          $env:GSTREAMER_1_0_ROOT_MSVC_X86_64
 
       - name: Build recorder
         run: |
-          $env:PATH += "C:\Program Files\gstreamer\1.0\msvc_x86_64\bin;"
+          $env:PATH += "$env:GSTREAMER_1_0_ROOT_MSVC_X86_64\1.0\msvc_x86_64\bin;"
           cargo build --bin owl-recorder --release
         
       - name: Build Webpack
