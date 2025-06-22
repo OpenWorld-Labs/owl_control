@@ -53,6 +53,7 @@ jobs:
           Get-Content -Path install.log
           Write-Output "GSTREAMER_1_0_ROOT_MSVC_X86_64 = $env:GSTREAMER_1_0_ROOT_MSVC_X86_64"
           $env:PATH += "D:\PFiles64\gstreamer\1.0\msvc_x86_64\bin;"
+          ls "D:\PFiles64\gstreamer\1.0\msvc_x86_64\bin;"
 
       - name: Build recorder
         run: cargo build --bin owl-recorder --release
